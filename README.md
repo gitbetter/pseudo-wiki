@@ -3,5 +3,5 @@ More features to be added soon.
 
 Support and feedback will be kindly regarded :)
 
-You can visit the wiki at <a href="pseudo-wiki.appspot.com">pseudo-wiki.appspot.com</a>
+You can visit the wiki at <a href="http://pseudo-wiki.appspot.com/">pseudo-wiki.appspot.com</a>
 No spamming!
