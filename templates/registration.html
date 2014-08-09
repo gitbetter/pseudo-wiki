@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{{ super() }}
+	<title>Signup!</title>
+	<link type="text/css" rel="stylesheet" href="/static/formstyles.css">
+{% endblock %}
+
+<!-- top-nav -->
+
+{% block header %}
+	<h3><a href="/">PseudoWiki</a></h3>
+	<div class="nav-menu">
+		<a href="/login">login</a>
+	</div>
+{% endblock %}
+
+<!-- top-nav end -->
+
+{% block content %}
+	<h1>Sign up!</h1>
+	<form method="post">
+		<table>
+			<tr>
+				<td class="label">Username</td>
+				<td><input type="text" name="username" value="{{username}}"></td>
+				<td><span class="error">{{ error_user }}</span></td>
+			</tr>
+			<tr>
+				<td class="label">Password</td>
+				<td><input type="password" name="password"></td>
+				<td><span class="error">{{ error_pass }}</span></td>
+			</tr>
+			<tr>
+				<td class="label">Verify Password</td>
+				<td><input type="password" name="verify"></td>
+				<td><span class="error">{{ error_verify }}</span></td>
+			</tr>
+			<tr>
+				<td class="label">E-Mail</td>
+				<td><input type="text" name="email" value="{{email}}"></td>
+				<td><span class="error">{{ error_email }}</span></td>
+			</tr>
+		</table>
+		<input type="hidden" name="next_url" value="{{next_url}}">
+		<input type="submit" value="submit">
+	</form>
+{% endblock %}

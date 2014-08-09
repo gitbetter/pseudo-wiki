@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	{% block head %}
+	<link type="text/css" rel="stylesheet" href="/static/styles.css">
+	{% endblock %}
+</head>
+
+<body> 
+	<div class="top-nav">
+		{% block header %}
+		<h3><a href="/">PseudoWiki</a></h3>
+		<div class="nav-menu">
+		{% if user %}
+			<span>{{ user.name }}(<a href="/logout" style="border-right:none; padding-right:0;">logout</a>)</span>
+		{% else %}
+			<a href="/login">login</a>
+			<a href="/signup">signup</a>
+		{% endif %}
+		</div>
+		{% endblock %}
+
+		{% block controls %}
+
+		{% endblock %}
+	</div>
+
+	{% block content %}
+	{% endblock %}
+</body>
+</html>

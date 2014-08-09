@@ -1,0 +1,56 @@
+h1 {
+	position: relative; 
+	left: 75pt;
+	width: 300px;
+	font-family: 'Times New Roman', Verdana; 
+	font-size: 30pt;
+	font-weight: 500;
+}
+
+.top-nav .nav-menu a:first-child {
+	position: relative;
+	right: 55px;
+	border: none;
+}
+
+form {
+	width: 600px;
+}
+
+table {
+	padding: 0 5px;
+}
+
+td {
+	padding-top: 15px;
+	padding-right: 10px;
+}
+
+table .error {
+	float: right;
+	color: red;
+}
+
+span.error {
+	position: relative;
+	float: left;
+	display: inline-block;
+	width: 200px;
+	left: 40px;
+	padding: 5px 0;
+	color: red;
+}
+
+.label {
+	text-align: right;
+	padding-left: 10px;
+	font-size: 15pt;
+}
+
+input[type="submit"] {
+	position: relative;
+	left: 170pt;
+	margin-top: 19pt;
+	border: none;
+	height: 25px;
+}

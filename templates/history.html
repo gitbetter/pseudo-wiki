@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{{ super() }}
+	<title>History</title>
+	<link type="text/css" rel="stylesheet" href="/static/historystyles.css">
+{% endblock %}
+
+{% block header %}
+	{{ super() }}
+{% endblock %}
+
+{% block controls %}
+	<div class="tool-menu">
+		<a href="/_edit{{ url }}">edit</a>
+		<a href="{{ url }}">view</a>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<table class="history">
+		{% for w in wikis %}
+			<tr class="hist-cell">
+				<td class="date-created">{{ w.created.strftime("%c") }}</td>
+				<td class="hist-content">{{ w.content[:100] }}</td>
+				<td class="link-to"><a href="{{url}}?v={{w.key().id()}}">view</a></td>
+
+				{% if user %}
+				<td class="link-to"><a href="/_edit{{url}}?v={{w.key().id()}}">edit</a></td>
+				{% endif %}
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}
