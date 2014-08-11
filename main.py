@@ -282,12 +282,12 @@ class EditPage(WikiHandler):
         self.content = self.request.get('content')
         wiki = all_wikis(self.page)
 
-        if not wiki or wiki.content != self.content:
+        if not (wiki and self.content):
+            pass
+        elif not wiki or wiki.content != self.content:
             wiki = Wikis(parent = Wikis.parent_key(self.page), content = self.content, url = self.page)
             wiki.put()
             change = True
-        elif not (wiki or content):
-            self.render('edit.html', url = page, user = self.user, page = wiki)
 
         if change:
             all_wikis(self.page, True)
